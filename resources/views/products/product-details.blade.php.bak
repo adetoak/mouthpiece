@@ -1,0 +1,134 @@
+@extends('layouts.app')
+@section('content')
+    <div class="container">
+        <div class="row">
+           <!--  <div class="control-bottom">
+                <div class="page-header">
+                    <h2>Title<small class="pull-right"><span class="glyphicon glyphicon-time">&nbsp;</span> sec(s)</small></h2>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="show-case text-center">
+                    <img src="{{ asset('public/img/products/product-'.$products->product_id.'/'.$products->imagepath)}}" alt="{{ $products->title }}" class="img-responsive" />
+                </div>
+                <div class="well">
+                    <div class="form-group">
+                        <a href="#sendmessage" data-toggle="modal" class="btn btn-primary btn-latge btn-block">
+                            <span class="fa fa-envelope"></span> Message Seller
+                        </a>
+                        <div class="modal fade" id = "sendmessage" role = "dialog">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h4>Send message to {{ $products->username }}</h4>
+                              </div>
+                              <form method="post" action="{{ url('messages') }}" enctype="multipart/form-data">
+                                <div class="modal-body">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" name="messageid" value="{{ str_shuffle('01234789') }}">
+                                    <input type="hidden" name="id" value="{{ $products->pid }}">
+                                    <input type="hidden" name="recipent" value="{{ $products->uid }}">  
+                                    <input type="hidden" name="ref" value="services">   
+                                    <div class="form-group">
+                                        <textarea class="form-control" rows="3" name="message"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputFile">
+                                            <span class="fui-clip">&nbsp;</span> Attach Files
+                                        </label>
+                                        <input type="file" name="messageimg" id="exampleInputFile">
+                                        <p class="help-block">Max size:10mb</p>
+                                    </div>                                                  
+                                </div>
+                                <div class="modal-footer">
+                                    <a class="btn btn-default" data-dismiss="modal">Close</a>
+                                    <button type="submit" class="btn btn-primary">
+                                        <span class="fa fa-send">&nbsp;</span> Send
+                                    </button>
+                                </div>                                                  
+                                </form>                                           
+                            </div>
+                          </div>
+                        </div>
+                        <!-- <a href="{{ url('messages/services/'.$products->id) }}" class="btn btn-primary btn-latge btn-block">
+                            <span class="fa fa-envelope"></span> Message
+                        </a> -->
+                    </div>
+                </div>                
+            </div>
+            <div class="col-md-7">
+                <div class="panel panel default">
+                    <div class="panel-body">                   
+                        <div class="well">
+                            <div class="page-header">
+                                <h5>{{ $products->title }}</h5>
+                            </div> 
+                            <form method="post" action="{{ url('products/shoppingcart') }}">
+                                {{ csrf_field() }}                               
+                                <div class="form-group">
+                                    <div class="form-inline">
+                                        <label for="quantity" class="control-label">Price:</label>    
+                                        <span>{{ $products->price }}</span>   
+                                        <input type="hidden" name="productid" value="{{ $products->product_id }}">                         
+                                    </div>
+                                    <div class="form-inline">
+                                        <label for="quantity" class="control-label">Quantity Available:</label>    
+                                        <span>{{ $products->quantity_available }}</span>   
+                                        <input type="hidden" name="productid" value="{{ $products->product_id }}">                         
+                                    </div>
+                                    <div class="form-inline">
+                                        <label for="quantity" class="control-label">Quantity:</label>
+                                        <input id="quantity" type="number" min="1" class="form-control" name="quantity" value="{{ old('quantity') }}" required autofocus>
+                                        @if ($errors->has('quantity'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('quantity') }}</strong>
+                                            </span>
+                                        @endif                                
+                                        
+                                    </div>                                  
+                                </div>                                  
+                                <div class="form-group">                                    
+                                    <button type="submit" class="btn btn-info" title="Add {{ $products->title }} to Cart"><span class="glyphicon glyphicon-plus-sign">&nbsp;</span>Add to Cart</button>
+                                </div>                                                   
+                            </form>
+                        </div>                      
+                        <div>
+                            <div class="tabbable">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href="#productdetails" data-toggle="tab"><span class="glyphicon glyphicon-info-sign">&nbsp;</span>Product Details</a></li>
+                                    <li><a href="#feedback" data-toggle="tab"><span class="glyphicon glyphicon-th-list">&nbsp;</span>Feedbacks</a></li>
+                                    <li><a href="#delivery" data-toggle="tab"><span class="glyphicon glyphicon-warning-sign">&nbsp;</span>Delivery</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="productdetails">
+                                        <div class="page-header">
+                                            <h4>Product Description</h4>
+                                        </div>
+                                        <p>
+                                           {{ $products->description }} 
+                                        </p>  
+                                    </div>
+                                    <div class="tab-pane" id="feedback">
+                                        <div id="showproductder">
+
+                                        </div>                                       
+
+                                    </div>
+                                    <div class="tab-pane" id="delivery">
+                                        <p></p>
+                                        <p>Products will be delivered within 2-3 business working days after payment has been made.</p>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </div>                                           
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@stop

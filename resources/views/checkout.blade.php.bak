@@ -1,0 +1,123 @@
+@extends('layouts.app')
+@section('content')
+<div class="container">
+	<div class="row">		
+		<div class="col-sm-12">
+			<div class="main">
+				<div class="panel panel-default">        
+			        <div class="panel-heading">
+			          <div class="panel-title">	            
+			            <h4>Order Summary</h4>
+			          </div>
+			        </div>
+			        <div class="panel-body">							            
+						<div class="row">
+							<div class="col-md-9">
+								<div class="table-responsive">
+								  	<table class="table table-bordered">
+									 	<thead>
+							                <tr>
+							                  <th class="text-left">Description</th>
+							                  <th class="text-center">Unit Price</th> 
+							                  <th class="text-center">Quantity</th>
+							                  <th class="text-center">Total</th>						                  
+							                </tr>
+						              	</thead>
+						              	<tbody>						              	
+											@foreach ($carts as $cart)											
+							                <tr>
+							                  	<td class="text-center">
+							                  		<div class="media">
+													  <div class="media-left pull-left">
+													    <a href="#">
+													      <img src="{{ asset('public/img/products/product-'.$cart->product_id.'/'.$cart->image_path)}}" alt="{{ $cart->title }}" class="img-circle img-responsive myProducts">
+													    </a>
+													  </div>
+													  <div class="media-body">
+													    <h6 class="media-heading">{{ $cart->title }}</h6>
+													  </div>
+													</div>								                  	
+							                  	</td>
+							                  	<td class="text-center">&#8358;{{ number_format($cart->price, 2, '.', ',')}}</td>
+							                  	<td class="text-center">{{ $cart->quantity }}</td>
+							                  	<td class="text-center">&#8358;{{ number_format($cart->price*$cart->quantity, 2, '.', ',') }}</td>     	
+							                </tr> 						              
+											@endforeach											
+						              	</tbody>								    
+								  	</table>
+								</div>
+								<fieldset>
+				        			<legend>Address to deliver to:</legend>			        				
+					        		<div class="col-md-6">
+						        		<div class="panel panel-default">
+										  <div class="panel-body">
+										    <p><strong>Name:</strong> {{ $bill->full_name }}</p>
+											<p><strong>State:</strong> {{ $bill->state }}</p>
+											<p><strong>City:</strong> {{ $bill->city }}</p>
+											<p><strong>Address:</strong> {{ $bill->address }}</p>
+											<p><strong>Telephone:</strong> {{ $bill->telephone}}</p>
+											<p>
+											<a href="{{ url('billing') }}" class="btn btn-primary">Change Delivery Address</a>
+											</p>
+										  </div>
+										</div>
+						        	</div>						        	
+				        		</fieldset>								
+							</div>
+							<div class="col-md-3 sidebar">
+								<div class="well">	
+									<form>
+			                          <script src="https://js.paystack.co/v1/inline.js"></script>
+			                          <button type="button" class="btn btn-primary btn-large btn-block" onclick="payWithPaystack()"> Pay {{ $sum }} </button> 
+			                        </form>
+			                         
+			                        <script>
+			                          function payWithPaystack(){
+			                            var handler = PaystackPop.setup({
+			                              key: 'pk_test_e2d10f250fdccbdb69e1f106e8f988fd8032084a',
+			                              email: "{{ $user->email }}",
+			                              amount: {{ $sum * 100 }},
+			                              ref: "{{ $txn_ref }}",
+			                              metadata: {
+			                                 custom_fields: [
+			                                    {
+			                                        display_name: "{{ $bill->full_name }}",
+			                                        variable_name: "mobile_number",
+			                                        value: "{{'+234'.$bill->telephone }}",
+			                                        billing_fullname: "{{ $bill->full_name }}",
+			                                        billing_telephone: "{{'+234'.$bill->telephone }}",
+			                                        billing_state: "{{ $bill->state }}",
+			                                        billing_city: "{{ $bill->city }}",
+			                                        billing_address: "{{ $bill->address }}"
+			                                    }
+			                                 ]
+			                              },
+			                              callback: function(response){
+			                                  //alert('success. transaction ref is ' + response.reference);
+			                                $.post("{{ url('paystack-redirect') }}", {"transaction_reference": response.reference}, function (result) {
+			                                  if(result.status == "paid")
+			                                  {
+			                                    window.location = "{{ url('response', ['transaction_id' => $txn_ref]) }}";
+			                                  } else {
+			                                    alert(result.message);
+			                                  }
+			                                });
+			                              },
+			                              onClose: function(){
+			                                  alert('window closed');
+			                              }
+			                            });
+			                            handler.openIframe();
+			                          }
+			                        </script>			
+								</div>								
+							</div>
+							
+						</div>																								
+					</div>
+				</div>
+			</div>					
+		</div>
+	</div>	
+</div>
+@endsection

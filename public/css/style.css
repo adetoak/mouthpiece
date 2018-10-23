@@ -1,0 +1,612 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web&amp;subset=latin-ext');
+html{
+  margin:0px;
+  padding: 0px;
+}
+body{
+  margin:0px;
+  padding: 0px;  
+}
+textarea{
+  resize: none;
+}
+h1,h2,h3,h4,h5,h6{
+  font-weight: 400;
+  word-spacing: 0.13em;
+}
+legend{
+  margin-bottom: 5px;
+}
+.wrapper{
+  padding-top: 100px;
+}
+.alert{  
+  font-size: 14px;
+}
+.clearpadding{
+  margin: 0px;
+  padding: 0px;
+}
+.caret:hover, .caret:focus{
+  color: #B5CB00;
+}
+.btn-primary{
+  background-color: #B5CB00 !important;
+}
+.error404 img{
+  margin: 20px auto 0px auto;
+}
+.panel{
+  margin-top: 20px;
+}
+.panel .panel-heading{
+  padding-bottom: 0px;
+  background-color: #B5CB00;
+  color: #FFF;
+  border-color: #FFF;
+}
+/*.panel{
+  background-color: #F5F5F5;
+  border-color: #DDD;
+}*/
+.page-header{
+  margin-top: 0px;
+  padding-top: 0px;
+}
+.page-header h6{
+  margin: 0px;
+  color: #292929;
+  font-weight: 300;
+  word-spacing: 0.14em;
+}
+.page-header h4{
+  color: #292929;
+  font-weight: 300;
+  word-spacing: 0.14em;
+}
+/* start of fixed-top styling */
+.navbar-fixed-top{
+  padding: 15px 0px;
+  background: #FFF;
+}
+.navbaractive{  
+  background: #EEE;
+  color: #FFF;
+}
+.navbar-collapse{
+  text-align: center;
+}
+.navbar-nav .dropdown{
+  text-align: center;
+}
+.navbar-nav .dropdown-menu{
+  text-align: center;
+}
+.navbar-default .navbar-nav > li > a{
+  color: #333;
+  font-size: 1.2em;
+}
+.navbar-default .navbar-nav > li > a:hover{
+  color: #B5CB00;
+}
+.navbar-default .navbar-nav > li > a:focus{
+  color: #B5CB00;
+}
+.navbar-default .navbar-nav .icon{
+  color: #FF7500;
+  font-size: 1.2em;
+}
+.navbar-collapse ul li a{
+  color: #777;
+  font-weight: normal;
+}
+.navbar-brand{
+  background: url(../img/mouthpiece-xs.png) no-repeat;
+  width: 191px;
+  height: 69px;
+  padding: 0;
+  margin-left: 12px;
+  margin-top: 10px;  
+  text-indent: -9999px;
+}
+.post-job{
+  background-color: #B5CB00;
+  color: #FFF;
+}
+a.post-job:hover{
+  background-color: #B5CB00;
+  color: #FFF;
+}
+
+/* End of fixed-top styling */
+/* start of index styling */
+.jumbotron{
+  background: #B5CB00 url(../img/jumbotron.png);
+  padding:auto 0px;
+  margin: 0px;
+  min-height: 500px;
+  max-height:900px;
+  background-size: cover;
+}
+.jumbotron .tabbable{
+  margin-top: 50px;
+}
+.jumbotron .tabbable .tab-content .input-group{
+  margin-top: 30px;
+}
+.nav-tabs>li>a:hover, .nav-tabs>li>a:focus{
+  color: #FFF;
+}
+.nav-tabs>li>a{
+  color: #000;
+}
+.auth{
+  background: #CCC url(../img/mouthpiece-login.png);
+  padding:auto 0px;
+  margin: 0px;
+  min-height: 500px;
+  max-height:700px;
+  background-size: cover;  
+}
+/*carousel styling */
+.services .carousel-indicators{
+  position: absolute;
+  bottom: 100%;
+  margin-bottom: -60px;
+  left: 0%;
+  z-index: 15;
+  width: 100%;
+  padding-left: 0;
+  margin-left: 0;
+  text-align: center;
+  list-style: none;
+}
+.services .carousel-indicators li{ 
+  display: inline-block;
+  width: auto;
+  height: auto;
+  margin: 0 0 0 -6px;
+  text-indent: 0;
+  cursor: pointer;
+  border: 1px solid #B5CB05;
+  border-radius: 0px;
+  color: #B5CB05;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 11px 15px;  
+}
+.services .carousel-indicators .active{
+  width: auto;
+  height: auto;
+  margin: 0 0 0 -6px; 
+  border: 1px solid #B5CB05;
+  color: #FF7500;
+}
+#carousel-example-generic .item{
+  padding-top: 110px;
+}
+/* End carousel styling */
+.services{
+  background: #EEE;
+  padding-bottom: 80px;
+  padding-top: 20px;
+}
+.services .clearpadding{
+  padding: 0px;
+  margin-bottom: 10px;
+}
+.featuredservices-heading h6, .featuredposts-heading h6{
+  background: url(../img/border.png) no-repeat;  
+  background-position: center bottom;
+  padding: 0px 0px 20px 0px;
+  margin: 30px 0px;
+  text-align: center;
+  font-size: 20px;
+}
+.thumbnail{
+  margin: 0px;
+  padding: 0px;
+  border: 0;
+  border-radius: 0;
+  max-height:400px;
+}
+.thumbnail img{ 
+  max-height: 100%;
+  max-width: 100%;
+}
+.thumbnail .caption{
+  text-align: left;
+  padding: 0px;
+  margin: 5px 10px;
+}
+.thumbnail .caption .servicedescription {
+  font-size: 16px;
+  min-height: 60px;
+  max-height: 60px;
+  color: #777;
+}
+.thumbnail .caption .servicetitle {
+  font-size: 16px;
+  min-height: 40px;
+  max-height: 60px; 
+  line-height: 20px; 
+}
+.thumbnail .imglink{  
+  margin: 0px;  
+}
+.thumbnail .caption .serviceprice{  
+  font-size: 16px;
+}
+.thumbnail .caption p{
+  margin: 3px;
+}
+.thumbnail .caption p a{
+  color: #B5CB00;
+  margin: 0px;
+}
+.panel-footer small{
+  color: #FF7500;
+}
+/* End of index styling */
+  /*Login*/
+  .login-wrapper{
+    background-color: rgba(239, 242, 237, 0.61);  
+  }
+  .logins{
+    background-color: #FFF;
+    border: solid 1px #FFF;
+    border-radius: 6px;
+    min-height: 655px;
+    width: 70%;
+    margin: 30px auto;   
+    overflow: hidden; 
+  }
+  #logincarousel, #logincarousel .item, #logincarousel .item img{
+    min-height: 655px; 
+  }
+  .leftloginwrap{
+    padding: 30px;
+    border-right: 1px solid #ccc;
+  }
+  .form-signin .form-group{
+    margin-bottom: 30px;
+  }
+  .login .imgholder img{
+    margin: 0px auto;
+  }
+  /*   End of login*/
+  /*invoice*/
+  .media-body h6{
+    font-size: 20px;
+  }
+  /*end of invoice*/
+  /*Sidebar*/
+  .panel-heading{
+    background-color: #B5CB00;
+  }
+  .list-group .active{
+    background-color: #B5CB00;
+    border: 0;
+  }
+  .list-group .list-group-item{
+    font-size: 16px;
+  }
+  /*End of sidebar*/
+
+/* Start of results styling */
+  .sidebar{
+    min-height: 100px;
+  }
+  .main{
+    padding-bottom: 50px;
+  }
+  .resultjumbotron{
+  background-color: #B5CB00;
+  padding:50px 0px;
+  margin: 0px;  
+  background-size: cover;
+}
+/* End of results styling */
+/* Start of cart styling */
+.media .media-left .myProducts{
+  width: 120px;
+  height: 70px;
+}
+/* End of cart styling */
+/* start of service profile styling */
+.servicedetails .page-header{
+  margin-bottom: 5px;
+}
+/* End of service profile styling */
+/*Start of product details styling*/
+.show-case img{
+  width: 100%;
+}
+/*End of product details styling*/
+/*Billing styling*/
+fieldset .billing{
+  min-height: 400px;
+}
+/*End of billing*/
+/* start of dashboard styling */
+.dashboard{
+  margin-bottom: 0px;
+  padding: 5px;
+  font-weight: 700;
+}
+.pimg{
+  width: 60px;
+  height: 60px;
+  border: solid 1px #EEE;
+  background-color: #CCC;
+  margin-right: 10px;
+}
+/* End of dashboard styling */
+/* Start of myservices styling */
+.media .media-left .myservices{
+  width: 150px;
+  height: 150px;
+}
+/* End of myservices styling */
+
+/* Start of job-offers styling */
+.media .media-left .joboffers{
+  width: 150px;
+  height: 150px;
+  background: url(../img/mouthpiece.png) no-repeat;
+}
+/* End of job-offers styling */
+/* start of upgrade account styling */
+.panel-body .upgradeaccount{
+  border: solid 1px #EEE;
+  padding-bottom: 10px;
+}
+.panel-body .upgradeaccount .usercategorydescription{
+  color: #6F6B6B;
+  font-size: 16px;
+  word-spacing: 0.14em;
+  min-height: 100px;
+}
+/* End of upgrade account styling */
+
+/* start of messages styling */
+.darker{
+  background-color: #ddd;
+}
+.well::after{
+  content: "";
+  clear: both;
+  display: table;
+}
+.well .serviceimg{
+  width: 100%;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  float: none;
+  border-radius: 0;
+  max-width: 100%;
+}
+.well img{
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%
+}
+.well img.right{
+  float: right;
+  color: #aaa;
+}
+.time-right{
+  float: right;
+  color: #aaa;
+}
+.time-left{
+  float: left;
+  color: #999;
+}
+/*.conversations .media {
+  background-color: #ebedef;
+  height: 64px;
+  
+  padding: 40px 28px 30px 32px;
+  text-align: center;
+  width: 64px;
+  border-radius: 50%;
+}*/
+.conversations .media a img{
+  width: 74px;
+  height: 74px;
+}
+
+/* End of messages styling */
+/* start of footer styling */
+footer{
+  padding-top: 20px;
+  background: #808080;
+}
+footer h6{
+  color: #FFF;
+  text-align: center;
+}
+footer .our-story{  
+  border-bottom-width: thin;
+  border-bottom-style: dotted;
+  border-bottom-color: #777;  
+}
+footer .our-story p{
+  line-height: 30px;
+  color: #DDD;
+  font-size: 1em;
+  text-align: center;
+}
+footer .newsletter{
+  text-align: left;
+}
+footer .newslettericon{
+  color: #FF7500;
+}
+footer .help-block{
+  color: #DDD;
+}
+  /*Stay Connected*/  
+  .stay-connected-icons {
+    font-size: 32px;
+    margin-left: -20px;
+    padding-left: 20px;  
+    text-align: center;  
+  }
+  .stay-connected-icons .stay-connected-content a {
+    margin: 0 0 0 35px;
+    color: #DDD;
+  }
+  .stay-connected-icons .stay-connected-content a:hover {
+    color: #FFF;
+  }
+  .stay-connected-icons .stay-connected-content {
+    margin: 0 0 0 -35px;
+  }
+  .stay-connected-icons .stay-connected-content > span {
+    display: inline-block;
+    margin: 0 0 2px 35px;
+    width: 24px;
+    font-size: 24px;
+  }
+  .stay-connected-icons-tooltip {
+    bottom: 0;
+    color: #c2c8cf;
+    font-size: 12px;
+    left: 100%;
+    margin-left: 0 !important;
+    position: absolute;
+    width: 80px;
+  }
+  /*End of stay connected*/
+footer .company-list{
+  text-align: center;
+}
+footer .company-list ul {
+  margin: 0px;
+  padding: 0px;
+}
+footer .company-list ul li {
+  display: inline;
+  margin-right: 20px;
+  line-height: 30px;
+}
+footer .company-list ul li a {
+  color: #DDD;
+}
+footer .company-list ul li a:hover {
+  color: #FFF;
+  text-decoration: underline;
+}
+footer .copyright {
+  padding: 0px;
+  margin-top: 5px;
+  margin-right: 0px;
+  margin-bottom: 10px;
+  margin-left: 0px;
+  font-size: 1.2em;
+  text-align: center;
+}
+footer .copyright a {
+  color: #5E5E5E;
+}
+/* End of footer styling */
+
+@media(min-width: 768px){
+  .navbar-brand{    
+    margin-left:0px;    
+  }  
+  .services .carousel-indicators li{
+    font-size: 14px;
+  }
+
+}
+@media(min-width: 992px){
+  .navbar-brand{
+    background: url(../img/mouthpiece.png) no-repeat;
+    width: 270px;
+    height: 70px;
+    margin-top: 0px;
+    margin-left: 12px;
+    padding: 0;
+    text-indent: -9999px;
+  }
+  .services .clearpadding{
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  .featuredservices-heading h6, .featuredposts-heading h6{
+    background-position: left bottom;  
+    text-align: left;   
+    font-size: 24px;
+  }
+  .thumbnail{
+    margin: 0px;
+    padding: 0px;
+  }
+  .thumbnail img{
+    height: 150px;
+  }
+  .thumbnail .caption{
+    text-align: left;
+  }
+  .thumbnail .caption p{
+    font-size: 18px;
+    color: #000;
+  }
+  footer .our-story h6{  
+  text-align: left;
+  }
+
+  footer .our-story p{
+  line-height: 30px;
+  color: #DDD;
+  font-size: 1em;
+  text-align: left;
+  }  
+  .stayconnected{
+    text-align: right;
+  }
+  .stay-connected-icons {      
+    text-align: right;  
+  }
+  footer .clearpadding{
+    padding: 0px;
+  }
+
+  footer .company-list{
+    text-align: left;
+  }
+
+  footer .copyright {
+    text-align: right;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
